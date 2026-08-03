@@ -3,6 +3,8 @@
 
 def calculate_average(numbers):
     """Return the arithmetic mean of a list of numbers."""
+    if not numbers:
+        raise ValueError("cannot compute the average of an empty list")
     total = sum(numbers)
     return total / len(numbers)
 
