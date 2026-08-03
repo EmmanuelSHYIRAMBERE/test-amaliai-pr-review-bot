@@ -8,3 +8,89 @@ metadata:
   created_by: "methuselah.nwodobeh@amalitech.com"
   last_updated: "2024-07-03"
   description: "Configuration for PR reviews in the Amaliai PR Reviewer project."
+
+review_settings:
+  enabled: true
+  max_files_per_review: 30
+
+languages:
+  python:
+    enabled: true
+    style_guide: "pep8"
+    rules_list:
+      - "Use type hints"
+      - "Avoid complex list comprehensions"
+      - "Handle exceptions appropriately"
+
+code_quality:
+  complexity:
+    enabled: true
+    max_cyclomatic_complexity: 10
+    max_function_length: 40
+    max_class_length: 400
+  naming_conventions:
+    enabled: true
+    case_to_enforce_variables: "snake_case"
+    case_to_enforce_functions: "snake_case"
+    case_to_enforce_classes: "PascalCase"
+    require_descriptive_names: true
+    min_variable_name_length: 3
+    forbidden_prefixes: ["temp", "tmp"]
+  documentation:
+    enabled: true
+    require_function_docs: true
+    require_class_docs: true
+    require_api_docs: true
+  security:
+    enabled: true
+    scan_for_secrets: true
+    check_dependency_vulnerabilities: true
+    enforce_input_validation: true
+    flag_sql_injection_risks: true
+
+architecture:
+  design_patterns:
+    enabled: true
+    enforce_solid_principles: true
+    discourage_god_objects: true
+    max_dependencies_per_class: 7
+  api_design:
+    enabled: true
+    api_type: "REST"
+    enforce_api_conventions: true
+
+performance:
+  database:
+    enabled: true
+    flag_n_plus_one_queries: true
+    require_query_optimization: true
+  memory:
+    enabled: true
+    flag_memory_leaks: true
+    suggest_memory_optimizations: true
+    check_resource_cleanup: true
+  algorithms:
+    enabled: true
+    flag_inefficient_loops: true
+    suggest_optimizations: true
+
+custom_prompts:
+  enabled: true
+  code_review_template: |
+    Please review this code change focusing on:
+    1. Code quality and adherence to PEP 8.
+    2. Potential security vulnerabilities.
+    3. Performance implications, especially database queries.
+    4. Code maintainability and readability.
+    5. Proper error handling and logging.
+
+file_rules:
+  enabled: true
+  ignored_files:
+    - "*.log"
+    - "__pycache__/**"
+    - "tests/**"
+  critical_files:
+    - "app/main.py"
+    - "app/config/settings.py"
+    - "Dockerfile"
