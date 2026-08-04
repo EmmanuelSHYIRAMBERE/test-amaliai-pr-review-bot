@@ -5,5 +5,5 @@ the bot to falsely mark open findings in profile_utils.py as resolved.
 """
 
 
-def greet(name):
+def greet(name: str) -> str:
     return f"Hello, {name}!"
