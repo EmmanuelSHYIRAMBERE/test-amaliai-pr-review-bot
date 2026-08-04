@@ -3,7 +3,9 @@
 
 def get_display_name(user_data):
     """Return a display name built from the user's profile data."""
-    return f"{user_data['first_name']} {user_data['last_name']}"
+    first_name = user_data.get('first_name', '')
+    last_name = user_data.get('last_name', '')
+    return f"{first_name} {last_name}".strip()
 
 
 def get_role_label(user_data):
