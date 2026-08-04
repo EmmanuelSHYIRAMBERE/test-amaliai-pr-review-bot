@@ -8,5 +8,5 @@ def get_display_name(user_data):
 
 def get_role_label(user_data):
     """Return a human-readable label for the user's role."""
-    role = user_data['role']
+    role = user_data.get('role')
     return role.replace("_", " ").title()
