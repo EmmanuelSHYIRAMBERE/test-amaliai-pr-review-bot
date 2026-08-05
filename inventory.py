@@ -4,9 +4,12 @@
 def get_item_price(item_data: dict) -> float:
     """Return the price of an item from its data dict.
 
-    Raises ValueError if 'price' is missing, matching the original fail-fast
-    contract instead of silently returning None.
+    Raises ValueError if 'price' is missing or not numeric, matching the
+    original fail-fast contract instead of silently returning None.
     """
     if 'price' not in item_data:
         raise ValueError("item_data must contain 'price'")
-    return item_data['price']
+    price = item_data['price']
+    if not isinstance(price, (int, float)):
+        raise ValueError("item_data['price'] must be numeric")
+    return float(price)

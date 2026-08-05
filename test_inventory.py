@@ -10,3 +10,8 @@ def test_get_item_price_returns_price():
 def test_get_item_price_missing_key_raises():
     with pytest.raises(ValueError):
         get_item_price({})
+
+
+def test_get_item_price_non_numeric_raises():
+    with pytest.raises(ValueError):
+        get_item_price({"price": "free"})
