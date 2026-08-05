@@ -4,9 +4,3 @@
 def get_item_price(item_data):
     """Return the price of an item from its data dict."""
     return item_data.get('price')
-
-
-def get_item_category(item_data):
-    """Return a human-readable label for the item's category."""
-    category = item_data['category']
-    return category.replace("_", " ").title()
