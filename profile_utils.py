@@ -6,9 +6,3 @@ def get_display_name(user_data):
     first_name = user_data.get('first_name', '')
     last_name = user_data.get('last_name', '')
     return f"{first_name} {last_name}".strip()
-
-
-def get_role_label(user_data):
-    """Return a human-readable label for the user's role."""
-    role = user_data.get('role')
-    return role.replace("_", " ").title()
