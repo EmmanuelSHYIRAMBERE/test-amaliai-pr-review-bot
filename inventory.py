@@ -3,7 +3,7 @@
 
 def get_item_price(item_data):
     """Return the price of an item from its data dict."""
-    return item_data['price']
+    return item_data.get('price')
 
 
 def get_item_category(item_data):
