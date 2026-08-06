@@ -1,4 +1,7 @@
-"""Small inventory helpers for the test-my-pr-review-bot demo repo."""
+"""Small inventory helpers for the test-my-pr-review-bot demo repo.
+
+See test_inventory.py for coverage of the missing-key and non-numeric cases.
+"""
 
 
 def get_item_price(item_data: dict) -> float:
